@@ -28,5 +28,14 @@ public class Banco {
 		return words;
 	}
 	
+	public Word getWordById(int id) {
+		for(Word word:words) {
+			if(word.getId()==id) {
+				return word;
+			}
+		}
+		return null;
+	}
+	
 	
 }

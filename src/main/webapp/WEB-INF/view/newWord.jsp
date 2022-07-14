@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>New Word</title>
 </head>
 <body>
 	<form action="${controller}" method="POST">
@@ -21,6 +21,7 @@
 		<li> 
 			${word.content}
 			<a href="controller?action=DeleteWord&id=${word.id}">delete</a>
+			<a href="controller?action=EditWordForm&id=${word.id}">edit</a>
 		</li>
 	</c:forEach>
 	</ul>

@@ -5,27 +5,27 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Banco {
-	private static List<Palavra> palavras = new ArrayList<>();
+	private static List<Word> words = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
 	
-	public void adicionaPalavra(Palavra palavra) {
-		palavra.setId(chaveSequencial++);
-		palavras.add(palavra);
+	public void addWord(Word word) {
+		word.setId(chaveSequencial++);
+		words.add(word);
 	}
 	
 	public void deleteWord(Integer id){
-		Iterator<Palavra> it = palavras.iterator();
+		Iterator<Word> it = words.iterator();
 		
 		while(it.hasNext()) {
-			Palavra p = it.next();
+			Word p = it.next();
 			if(p.getId() == id) {
 				it.remove();
 			}
 		}
 	}
 
-	public static List<Palavra> getPalavras() {
-		return palavras;
+	public static List<Word> getWords() {
+		return words;
 	}
 	
 	

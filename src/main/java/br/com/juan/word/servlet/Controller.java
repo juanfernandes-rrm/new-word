@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.juan.word.action.Acao;
-import br.com.juan.word.action.NovaPalavra;
-import br.com.juan.word.action.NovaPalavraForm;
 
 @WebServlet("/controller")
 public class Controller extends HttpServlet {
@@ -26,7 +24,7 @@ public class Controller extends HttpServlet {
 		try {
 			Class classe = Class.forName(nomeDaClasse); //carrega a classe com o nome
 			Acao acao = (Acao)classe.newInstance();
-			path = acao.executa(request, response);
+			path = acao.execute(request, response);
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException
 				| IOException e) {
 			throw new ServletException(e);

@@ -1,10 +1,10 @@
 package br.com.juan.word.model;
 
-public class Palavra {
+public class Word {
 	private Integer id;
 	private String content;
 	
-	public Palavra() {
+	public Word() {
 		super();
 	}
 

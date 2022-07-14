@@ -1,4 +1,4 @@
-package br.com.juan.model;
+package br.com.juan.word.model;
 
 public class Palavra {
 	private Integer id;

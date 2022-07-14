@@ -20,6 +20,7 @@
 	<c:forEach items="${listaPalavras}" var="palavra">
 		<li> 
 			${palavra.content}
+			<a href="controller?action=DeleteWord&id=${palavra.id}">delete</a>
 		</li>
 	</c:forEach>
 	</ul>

@@ -1,4 +1,4 @@
-package br.com.juan.model;
+package br.com.juan.word.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,11 +9,11 @@ public class Banco {
 	private static Integer chaveSequencial = 1;
 	
 	public void adicionaPalavra(Palavra palavra) {
-		palavra.setId(chaveSequencial);
+		palavra.setId(chaveSequencial++);
 		palavras.add(palavra);
 	}
 	
-	public void removePalavra(Integer id){
+	public void deleteWord(Integer id){
 		Iterator<Palavra> it = palavras.iterator();
 		
 		while(it.hasNext()) {

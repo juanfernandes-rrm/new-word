@@ -11,7 +11,9 @@
 </head>
 <body>
 	<h1>New Word</h1>
-	<p>Anote as palavras e expressões que você tem dúvida!</p>
+	<h2>Anote as palavras e expressões que você tem dúvida!</h2>
+	<p>${user.username}</p>
+	<a href="controller?action=Logout" >sign out</a>
 	<form action="${controller}" method="POST">
 		Word: <input type=text name="word"/>
 		<input type="hidden" value="NewWord" name="action">

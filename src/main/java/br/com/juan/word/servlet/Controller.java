@@ -34,6 +34,7 @@ public class Controller extends HttpServlet {
 		String[] prefixoEndereco = path.split(":");//[0] prefixo, [1] jsp
 		
 		if(prefixoEndereco[0].equals("forward")) {
+			System.out.println("Controller: "+prefixoEndereco[1]);
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+prefixoEndereco[1]);
 			rd.forward(request, response);
 		}else {

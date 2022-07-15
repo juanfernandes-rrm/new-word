@@ -10,10 +10,12 @@
 <title>New Word</title>
 </head>
 <body>
+	<h1>New Word</h1>
+	<p>Anote as palavras e expressões que você tem dúvida!</p>
 	<form action="${controller}" method="POST">
 		Word: <input type=text name="word"/>
 		<input type="hidden" value="NewWord" name="action">
-		<input type="submit" value="Cadastrar"/>
+		<input type="submit" value="Add"/>
 	</form>
 	
 	<ul>

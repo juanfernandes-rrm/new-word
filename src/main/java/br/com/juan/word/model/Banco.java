@@ -6,7 +6,18 @@ import java.util.List;
 
 public class Banco {
 	private static List<Word> words = new ArrayList<>();
+	private static List<User> users = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
+	private static Integer chaveSequencialUser = 1;
+	
+	static {
+		User u1 = new User();
+		u1.setId(chaveSequencialUser++);
+		u1.setUsername("juan");
+		u1.setPassword("123");
+		
+		users.add(u1);
+	}
 	
 	public void addWord(Word word) {
 		word.setId(chaveSequencial++);
@@ -36,6 +47,16 @@ public class Banco {
 		}
 		return null;
 	}
+	
+	public static User searchUser(String username, String password) {
+		for(User user:users) {
+			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
+				return user;
+			}
+		}
+		return null;
+	}
+	
 	
 	
 }

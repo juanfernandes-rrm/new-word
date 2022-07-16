@@ -31,14 +31,13 @@ public class Controller extends HttpServlet {
 		}
 		
 		
-		String[] prefixoEndereco = path.split(":");//[0] prefixo, [1] jsp
+		String[] prefixAndPath = path.split(":");//[0] prefixo, [1] jsp
 		
-		if(prefixoEndereco[0].equals("forward")) {
-			System.out.println("Controller: "+prefixoEndereco[1]);
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+prefixoEndereco[1]);
+		if(prefixAndPath[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+prefixAndPath[1]);
 			rd.forward(request, response);
 		}else {
-			response.sendRedirect(prefixoEndereco[1]);
+			response.sendRedirect(prefixAndPath[1]);
 		}
 	}
 

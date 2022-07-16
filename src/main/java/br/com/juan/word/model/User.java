@@ -1,10 +1,10 @@
 package br.com.juan.word.model;
 
 public class User {
-	private Integer id;
-	private String username;
-	private String password;
-	
+	protected Integer id;
+	protected String username;
+	protected String password;
+	protected String role;
 	
 	public Integer getId() {
 		return id;
@@ -24,6 +24,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+	}
 	
 }

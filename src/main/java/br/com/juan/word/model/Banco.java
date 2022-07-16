@@ -11,12 +11,22 @@ public class Banco {
 	private static Integer chaveSequencialUser = 1;
 	
 	static {
-		User u1 = new User();
-		u1.setId(chaveSequencialUser++);
-		u1.setUsername("juan");
-		u1.setPassword("123");
+		Student s1 = new Student();
+		s1.setId(chaveSequencialUser++);
+		s1.setUsername("juan");
+		s1.setPassword("1234");
+		System.out.println("Banco = s1");
 		
-		users.add(u1);
+		Teacher t1 = new Teacher();
+		t1.setId(chaveSequencialUser++);
+		t1.setUsername("juan");
+		t1.setPassword("12345");
+		
+		
+		System.out.println(s1.toString());
+		System.out.println(t1.toString());
+		users.add(t1);
+		users.add(s1);
 	}
 	
 	public void addWord(Word word) {

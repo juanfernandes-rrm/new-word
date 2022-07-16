@@ -21,9 +21,10 @@ import br.com.juan.word.model.User;
  */
 @WebFilter("/controller")
 public class PermissionFilter extends HttpFilter implements Filter {
-
+	public static int vezPassou = 1;
+	
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
-		
+		System.out.println(vezPassou++);
 		System.out.println("Filter");
 		
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
@@ -31,17 +32,30 @@ public class PermissionFilter extends HttpFilter implements Filter {
 		
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userLogin");
-		
 		String action = request.getParameter("action");
 		
+		
+		//suspeita de ao fazer upcast, perder o atributo
+		
 		boolean isUserLogin = (user!=null);
+		System.out.println("User"+user);
 		boolean isProtectedAction = !(action.equals("LoginForm") || action.equals("Login"));
+		boolean isProtectedActionTeacher = (action.equals("NewWord") || action.equals("NewWordForm"));
 		
 		if(!isUserLogin && isProtectedAction) {
-			response.sendRedirect("controller?action=LoginForm");
-			System.out.println("Filter: controller?action=LoginForm");
-			return;
+			response.sendRedirect("controller?action=LoginForm"); 
+			return; 
 		}
+		
+		if(isUserLogin) {
+			if(user.getRole().toUpperCase().equals("TEACHER")) {
+				if(isProtectedActionTeacher) {
+					response.sendRedirect("controller?action=LoginForm");
+					return;
+				}
+			}
+		}
+		
 		chain.doFilter(request, response);
 	}
 

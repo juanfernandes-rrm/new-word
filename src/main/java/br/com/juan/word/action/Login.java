@@ -20,11 +20,12 @@ public class Login implements Acao {
 		String password = request.getParameter("password");
 		
 		User user = Banco.searchUser(username, password);
+		System.out.println("Login - user"+user.toString());
 		
 		if(user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userLogin", user);
-			return "redirect:controller?action=NewWordForm";
+			return "redirect:controller?action=Home";
 		}else {
 			return "redirect:controller?action=LoginForm";
 		}

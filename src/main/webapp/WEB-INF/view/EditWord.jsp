@@ -11,7 +11,8 @@
 </head>
 <body>
 	<form action="${controller}" method="POST">
-		Word: <input type=text name="word" value="${word.content}"/>
+		Word: <input type="text" name="word" value="${word.content}"/>
+		Phase: <input type="text" name="phrase" value="${word.phrase}"/>
 		<input type="hidden" name="id" value="${word.id}">
 		<input type="hidden" name="action" value="EditWord">
 		<input type="submit" value="Edit"/>

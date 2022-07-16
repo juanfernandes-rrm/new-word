@@ -3,11 +3,17 @@ package br.com.juan.word.model;
 public class Word {
 	private Integer id;
 	private String content;
+	private String phrase;
+
 	
-	public Word() {
-		super();
+	public Integer getId() {
+		return id;
 	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public String getContent() {
 		return content;
 	}
@@ -16,11 +22,13 @@ public class Word {
 		this.content = content;
 	}
 
-	public Integer getId() {
-		return id;
+	public String getPhrase() {
+		return phrase;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setPhrase(String phrase) {
+		this.phrase = phrase;
 	}
+	
+	
 }

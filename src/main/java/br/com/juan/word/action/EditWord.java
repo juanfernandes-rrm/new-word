@@ -16,12 +16,13 @@ public class EditWord implements Acao {
 			throws ServletException, IOException {
 		
 		String content = request.getParameter("word");
+		String phrase = request.getParameter("phrase");
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		Banco banco = new Banco();
 		Word word = banco.getWordById(id);
 		word.setContent(content);
-		System.out.println("Chegou Action EditWord");
+		word.setPhrase(phrase);
 		
 		return "redirect:controller?action=NewWordForm";
 	}

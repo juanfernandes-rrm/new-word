@@ -17,10 +17,11 @@ public class NewWord implements Acao{
 			throws ServletException, IOException {
 
 		String content = request.getParameter("word");
-		System.out.println("Word = "+content);
+		String phrase = request.getParameter("phrase");
 		
 		Word word = new Word();
 		word.setContent(content);
+		word.setPhrase(phrase);
 		
 		Banco banco = new Banco();
 		banco.addWord(word);

@@ -15,7 +15,8 @@
 	<p>${user.username}</p>
 	<a href="controller?action=Logout" >sign out</a>
 	<form action="${controller}" method="POST">
-		Word: <input type=text name="word"/>
+		Word: <input type="text" name="word"/>
+		Phrase: <input type="text" name="phrase"/>
 		<input type="hidden" value="NewWord" name="action">
 		<input type="submit" value="Add"/>
 	</form>
@@ -23,7 +24,7 @@
 	<ul>
 	<c:forEach items="${listWords}" var="word">
 		<li> 
-			${word.content}
+			${word.content} - ${word.phrase}
 			<a href="controller?action=DeleteWord&id=${word.id}">delete</a>
 			<a href="controller?action=EditWordForm&id=${word.id}">edit</a>
 		</li>

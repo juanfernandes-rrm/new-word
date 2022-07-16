@@ -21,7 +21,6 @@ public class EditWordForm implements Acao {
 		Word word = banco.getWordById(id);
 		
 		request.setAttribute("word", word);
-		System.out.println("Chegou EditWordForm");
 		
 		return "forward:EditWord.jsp";
 	}

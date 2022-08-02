@@ -12,7 +12,7 @@
 <body>
 	<form action="${controller}" method="POST">
 		Login: <input type="text" name="username"/>
-		Password: <input type="text" name="password"/>
+		Password: <input type="password" name="password"/>
 		<input type="hidden" value="Login" name="action">
 		<input type="submit" value="Sign in"/>
 	</form>

@@ -9,9 +9,10 @@
 <title>Teacher ${userLogin.username}</title>
 </head>
 <body>
-	<h1>Welcome ${userLogin.username}</h1>
+	<h1>Welcome Teacher ${userLogin.username}</h1>
 	<a href="controller?action=Logout" >sign out</a>
 	
+	<h2>Words for corrections</h2>
 	<ul>
 	<c:forEach items="${listCorrections}" var="correction">
 		<li> 

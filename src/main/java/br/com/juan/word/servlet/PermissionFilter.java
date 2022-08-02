@@ -50,7 +50,7 @@ public class PermissionFilter extends HttpFilter implements Filter {
 		if(isUserLogin) {
 			if(user.getRole().toUpperCase().equals("TEACHER")) {
 				if(isProtectedActionTeacher) {
-					response.sendRedirect("controller?action=LoginForm");
+					response.sendRedirect("controller?action=Home");
 					return;
 				}
 			}

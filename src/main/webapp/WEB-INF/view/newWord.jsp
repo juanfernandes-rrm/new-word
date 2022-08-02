@@ -22,11 +22,11 @@
 	</form>
 	
 	<ul>
-	<c:forEach items="${listWords}" var="word">
+	<c:forEach items="${listCorrections}" var="correction">
 		<li> 
-			${word.content} - ${word.phrase}
-			<a href="controller?action=DeleteWord&id=${word.id}">delete</a>
-			<a href="controller?action=EditWordForm&id=${word.id}">edit</a>
+			${correction.word.content} - ${correction.word.phrase}
+			<a href="controller?action=DeleteWord&id=${correction.id}">delete</a>
+			<a href="controller?action=EditWordForm&id=${correction.word.id}">edit</a>
 		</li>
 	</c:forEach>
 	</ul>

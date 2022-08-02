@@ -42,7 +42,7 @@ public class Banco {
 		words.add(word);
 	}
 	
-	public void deleteWord(Integer id){
+	private void deleteWord(Integer id){
 		Iterator<Word> it = words.iterator();
 		
 		while(it.hasNext()) {
@@ -98,6 +98,22 @@ public class Banco {
 		return null;
 	}
 	
+	public static List<Correction> getCorrections() {
+		return corrections;
+	}
+
+	public void deleteCorrection(int id) {
+		Iterator<Correction> it = corrections.iterator();
+		
+		while(it.hasNext()) {
+			Correction correction = it.next();
+			if(correction.getId() == id) {
+				it.remove();
+				deleteWord(correction.getWord().getId());
+			}
+		}
+		
+	}
 	
 	
 }

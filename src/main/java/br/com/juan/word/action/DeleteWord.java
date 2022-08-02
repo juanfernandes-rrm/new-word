@@ -17,7 +17,7 @@ public class DeleteWord implements Acao {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		Banco banco = new Banco();
-		banco.deleteWord(id);
+		banco.deleteCorrection(id);
 		System.out.println("Id: "+id);
 		
 		return "redirect:controller?action=NewWordForm";

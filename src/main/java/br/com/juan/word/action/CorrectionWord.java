@@ -23,11 +23,11 @@ public class CorrectionWord implements Acao {
 		Banco banco = new Banco();
 		Correction correction = banco.getCorrectionById(id);
 		correction.setComment(comment);
-		System.out.println("Correction ANTES = "+correction.getComment());
+		System.out.println("Correction ANTES = "+correction);
 
 		//talvez atualizar o objeto no banco com comentario
 		//banco.addCorrection(correction);
-		System.out.println("Correction Depois = "+correction.getComment());
+		System.out.println("Correction Depois = "+correction);
 		
 		return "forward:teacherHome.jsp";
 	}

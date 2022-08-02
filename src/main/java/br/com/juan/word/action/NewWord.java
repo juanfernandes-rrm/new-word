@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.juan.word.model.Banco;
+import br.com.juan.word.model.Correction;
 import br.com.juan.word.model.Word;
 
 public class NewWord implements Acao{
@@ -22,12 +23,14 @@ public class NewWord implements Acao{
 		Word word = new Word();
 		word.setContent(content);
 		word.setPhrase(phrase);
+		Correction correction = new Correction(word);
 		
 		Banco banco = new Banco();
 		banco.addWord(word);
+		banco.addCorrection(correction);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("listWords", Banco.getWords());
+		session.setAttribute("listCorrections", Banco.getCorrections());
 		
 		
 		return "redirect:controller?action=NewWordForm";

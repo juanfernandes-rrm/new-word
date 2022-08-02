@@ -11,6 +11,7 @@
 <body>
 	<p>${correction.word.content}</p>
 	<p>${correction.word.phrase}</p>
+	<p>${correction.comment}</p>
 	<form action="${controller}" method="POST">
 		Comment: <input type="text" name="comment" value="${correction.comment}"/>
 		<input type="hidden" name="id" value="${correction.id}">

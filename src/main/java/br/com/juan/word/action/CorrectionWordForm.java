@@ -18,6 +18,7 @@ public class CorrectionWordForm implements Acao {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		System.out.println("CorrectionWordForm");
 		int idWord = Integer.parseInt(request.getParameter("idWord"));
 		int idTeacher = Integer.parseInt(request.getParameter("idTeacher"));
 		
@@ -27,6 +28,7 @@ public class CorrectionWordForm implements Acao {
 		Word word = banco.getWordById(idWord);
 		Teacher teacher = (Teacher) banco.getUserById(idTeacher);
 		Correction correction = new Correction(word, teacher);
+		System.out.println("Correction "+correction);
 		
 		banco.addCorrection(correction);
 		

@@ -5,7 +5,9 @@ public class Correction {
 	private Word word;
 	private Teacher teacher;
 	private String comment;
-	public Correction() {
+	
+	public Correction(Word word) {
+		this.word = word;
 	}
 	
 	public Correction(Word word, Teacher teacher) {
@@ -47,5 +49,12 @@ public class Correction {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
+	@Override
+	public String toString() {
+		return "Correction [id=" + id + ", word=" + word + ", teacher=" + teacher + ", comment=" + comment + "]";
+	}
+	
+	
 	
 }

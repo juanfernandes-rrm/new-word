@@ -11,5 +11,6 @@
 <body>
 	<h1>Welcome ${userLogin.username}</h1>
 	<a href="controller?action=Logout" >sign out</a>
+	<a href="controller?action=NewWordForm" >new word</a>
 </body>
 </html>

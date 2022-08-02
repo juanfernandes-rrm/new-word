@@ -7,8 +7,11 @@ import java.util.List;
 public class Banco {
 	private static List<Word> words = new ArrayList<>();
 	private static List<User> users = new ArrayList<>();
+	private static List<Correction> corrections = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
 	private static Integer chaveSequencialUser = 1;
+	private static Integer chaveSequencialWord = 1;
+	private static Integer chaveSequencialCorrection = 1;
 	
 	static {
 		Student s1 = new Student();
@@ -22,6 +25,11 @@ public class Banco {
 		t1.setUsername("juan");
 		t1.setPassword("12345");
 		
+		Word w1 = new Word();
+		w1.setId(chaveSequencialWord++);
+		w1.setContent("test");
+		w1.setPhrase("it`s a test");
+		words.add(w1);
 		
 		System.out.println(s1.toString());
 		System.out.println(t1.toString());
@@ -62,6 +70,29 @@ public class Banco {
 		for(User user:users) {
 			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				return user;
+			}
+		}
+		return null;
+	}
+
+	public User getUserById(int id) {
+		for(User user:users) {
+			if(user.getId()==id) {
+				return user;
+			}
+		}
+		return null;
+	}
+
+	public void addCorrection(Correction correction) {
+		correction.setId(chaveSequencialCorrection++);
+		corrections.add(correction);
+	}
+
+	public Correction getCorrectionById(int id) {
+		for(Correction correction:corrections) {
+			if(correction.getId()==id) {
+				return correction;
 			}
 		}
 		return null;

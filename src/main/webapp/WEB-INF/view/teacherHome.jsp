@@ -11,5 +11,14 @@
 <body>
 	<h1>Welcome ${userLogin.username}</h1>
 	<a href="controller?action=Logout" >sign out</a>
+	
+	<ul>
+	<c:forEach items="${listWords}" var="word">
+		<li> 
+			${word.content} - ${word.phrase}
+			<a href="controller?action=CorrectionWordForm&idWord=${word.id}&idTeacher=${userLogin.id}" >correction</a>
+		</li>
+	</c:forEach>
+	</ul>
 </body>
 </html>

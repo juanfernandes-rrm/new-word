@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.juan.word.model.Banco;
 import br.com.juan.word.model.User;
 
 public class Home implements Acao {
@@ -20,6 +21,7 @@ public class Home implements Acao {
 		
 		String role = user.getRole().toUpperCase();
 		if(role.equals("TEACHER")) {
+			session.setAttribute("listWords", Banco.getWords());
 			return "forward:teacherHome.jsp";
 		}else if(role.equals("STUDENT")) {
 			return "forward:studentHome.jsp";

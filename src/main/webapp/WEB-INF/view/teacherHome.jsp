@@ -13,10 +13,10 @@
 	<a href="controller?action=Logout" >sign out</a>
 	
 	<ul>
-	<c:forEach items="${listWords}" var="word">
+	<c:forEach items="${listCorrections}" var="correction">
 		<li> 
-			${word.content} - ${word.phrase}
-			<a href="controller?action=CorrectionWordForm&idWord=${word.id}&idTeacher=${userLogin.id}" >correction</a>
+			${correction.word.content} - ${correction.word.phrase} - ${correction.comment}
+			<a href="controller?action=CorrectionWordForm&idTeacher=${userLogin.id}&idCorrection=${correction.id}" >correction</a>
 		</li>
 	</c:forEach>
 	</ul>

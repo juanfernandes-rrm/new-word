@@ -19,18 +19,17 @@ public class CorrectionWordForm implements Acao {
 			throws ServletException, IOException {
 		
 		System.out.println("CorrectionWordForm");
-		int idWord = Integer.parseInt(request.getParameter("idWord"));
+		int idCorrection = Integer.parseInt(request.getParameter("idCorrection"));
 		int idTeacher = Integer.parseInt(request.getParameter("idTeacher"));
 		
 		HttpSession session = request.getSession();
 		
 		Banco banco = new Banco();
-		Word word = banco.getWordById(idWord);
+		Correction correction = banco.getCorrectionById(idCorrection);
 		Teacher teacher = (Teacher) banco.getUserById(idTeacher);
-		Correction correction = new Correction(word, teacher);
-		System.out.println("Correction "+correction);
+		correction.setTeacher(teacher);
 		
-		banco.addCorrection(correction);
+		System.out.println("Correction "+correction);
 		
 		session.setAttribute("correction", correction);
 		

@@ -21,7 +21,7 @@ public class Home implements Acao {
 		
 		String role = user.getRole().toUpperCase();
 		if(role.equals("TEACHER")) {
-			session.setAttribute("listWords", Banco.getWords());
+			session.setAttribute("listCorrections", Banco.getCorrections());
 			return "forward:teacherHome.jsp";
 		}else if(role.equals("STUDENT")) {
 			return "forward:studentHome.jsp";

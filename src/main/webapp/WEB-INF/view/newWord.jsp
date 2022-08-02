@@ -26,7 +26,7 @@
 		<li> 
 			${correction.word.content} - ${correction.word.phrase}
 			<a href="controller?action=DeleteWord&id=${correction.id}">delete</a>
-			<a href="controller?action=EditWordForm&id=${correction.word.id}">edit</a>
+			<a href="controller?action=EditWordForm&id=${correction.id}">edit</a>
 		</li>
 	</c:forEach>
 	</ul>

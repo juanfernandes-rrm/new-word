@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.juan.word.model.Banco;
+import br.com.juan.word.model.Correction;
 import br.com.juan.word.model.Word;
 
 public class EditWord implements Acao {
@@ -20,7 +21,8 @@ public class EditWord implements Acao {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		Banco banco = new Banco();
-		Word word = banco.getWordById(id);
+		Correction correction = banco.getCorrectionById(id);
+		Word word = correction.getWord();
 		word.setContent(content);
 		word.setPhrase(phrase);
 		
